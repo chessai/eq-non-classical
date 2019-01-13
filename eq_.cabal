@@ -1,0 +1,105 @@
+cabal-version:       2.0
+name:                eq_
+version:             0.0.0
+synopsis:            non-classical `Eq` typeclass
+description:         non-classical `Eq` typeclass
+homepage:            https://github.com/chessai/eq_
+bug-reports:         https://github.com/chessai/eq_/issues
+license:             BSD3
+license-file:        LICENSE
+author:              chessai
+maintainer:          chessai1996@gmail.com
+copyright:           2019 chessai
+category:            Data
+build-type:          Simple
+extra-doc-files:     README.md
+                   , CHANGELOG.md
+tested-with:         GHC == 8.2.2, GHC == 8.4.4, GHC == 8.6.3
+
+source-repository head
+  type:                git
+  location:            https://github.com/chessai/eq_.git
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Eq_
+                       
+
+  build-depends:       base >= 4.10.1.0 && < 4.13
+                     
+
+  ghc-options:         -Wall
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+
+  default-language:    Haskell2010
+
+executable eq_
+  hs-source-dirs:      app
+  main-is:             Main.hs
+
+  build-depends:       base >= 4.10.1.0 && < 4.13
+                     , eq_
+                     
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+
+  default-language:    Haskell2010
+
+test-suite eq_-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+
+  build-depends:       base >= 4.10.1.0 && < 4.13
+                     , eq_
+                     
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+
+  default-language:    Haskell2010
+
+benchmark eq_-benchmark
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      benchmark
+  main-is:             Main.hs
+
+  build-depends:       base >= 4.10.1.0 && < 4.13
+                     , gauge
+                     , eq_
+                     
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+
+  default-language:    Haskell2010
