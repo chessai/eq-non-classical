@@ -3,7 +3,7 @@
 }:
 
 with rec {
-  drv = nixpkgs.haskellPackages.eq_;
+  drv = nixpkgs.haskellPackages.eq-non-classical;
 };
 
 drv

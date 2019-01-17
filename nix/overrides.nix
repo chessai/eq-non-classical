@@ -7,12 +7,12 @@ with { inherit (pkgs.stdenv) lib; };
 with pkgs.haskell.lib;
 
 {
-  eq_ = (
+  eq-non-classical = (
     with rec {
-      eq_Source = pkgs.lib.cleanSource ../.;
-      eq_Basic  = self.callCabal2nix "eq_" eq_Source { };
+      eq-non-classicalSource = pkgs.lib.cleanSource ../.;
+      eq-non-classicalBasic  = self.callCabal2nix "eq-non-classical" eq-non-classicalSource { };
     };
-    overrideCabal eq_Basic (old: {
+    overrideCabal eq-non-classicalBasic (old: {
     })
   );
 }
